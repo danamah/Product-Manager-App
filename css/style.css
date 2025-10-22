@@ -1,0 +1,26 @@
+body{
+    font-family: "Prompt", sans-serif;;
+}
+.header {
+    max-width: fit-content;
+}
+.form-floating textarea.form-control{
+    resize: vertical;
+    min-height: 150px;
+    max-height: 300px;
+}
+.form-control:focus{
+    box-shadow: none;
+    border-color: var(--bs-border-color);
+}
+.product-card{
+    background-color:#101214;
+}
+
+.product-card img{
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-inline: auto;
+}

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Manager app</title>
+    <!-- ^ fontawsome css file -->
+    <link rel="stylesheet" href="./css/all.min.css" />
+    <!-- ^ bootstrap css file -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <!-- ^ my style sheet -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <!-- ^ google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main>
+      <section>
+        <div class="container">
+          <div
+            class="header d-flex justify-content-center align-items-center border mx-auto p-3 rounded-2 shadow-sm my-2"
+          >
+            <h1>
+              <span class="text-info">P</span>roduct
+              <span class="text-info">M</span>anagment
+              <span class="text-info">S</span>ystem
+            </h1>
+            <i class="fa-solid fa-store text-info fs-1 ms-2 pb-2"></i>
+          </div>
+          <form action="" class="w-75 mx-auto mt-4">
+            <div class="form-floating mb-3">
+              <input
+                oninput="isValidInput(productsRegex.productName, this)"
+                type="text"
+                class="form-control"
+                id="productName"
+                placeholder="name@example.com"
+                autocomplete="off"
+              />
+              <p class="fs-6 d-none mt-2 text-danger">
+                Product Name Must Start With Capital Letter followed by at least
+                two character
+              </p>
+              <label for="productName">Product Name</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input
+                oninput="isValidInput(productsRegex.productCategory, this)"
+                type="text"
+                class="form-control"
+                id="productCategory"
+                placeholder="name@example.com"
+                autocomplete="off"
+                list="categories"
+              />
+              <p class="fs-6 d-none mt-2 text-danger">
+                Your choise must be from those categories
+                Mobile|Tv|Camera|Laptop|Headpho|Speaker|Printer
+              </p>
+              <datalist id="categories">
+                <option>Mobile</option>
+                <option>Laptop</option>
+                <option>Camera</option>
+                <option>Clothes</option>
+                <option>Medicine</option>
+              </datalist>
+              <label for="productCategory">Product Category</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input
+                oninput="isValidInput(productsRegex.productPrice, this)"
+                type="number"
+                class="form-control"
+                id="productPrice"
+                placeholder="name@example.com"
+                autocomplete="off"
+              />
+              <p class="fs-6 d-none mt-2 text-danger">
+                Product Price Must Be greater than zero
+              </p>
+              <label for="productPrice">Product Price</label>
+            </div>
+            <div class="form-floating mb-3">
+              <textarea
+                oninput="isValidInput(productsRegex.productDescription, this)"
+                class="form-control"
+                name="Description"
+                id="productDescription"
+              ></textarea>
+              <p class="fs-6 d-none mt-2 text-danger">
+                Prodcut Description Must Be at least 3 character
+              </p>
+              <label for="productDescription">Product Description</label>
+            </div>
+            <div class="mb-3">
+              <input type="file" class="form-control" id="productImage" />
+              <p class="fs-6 d-none mt-2 text-danger">
+                Please choose Product image
+              </p>
+            </div>
+            <button
+              id="addButton"
+              onclick="addProduct()"
+              type="button"
+              class="btn btn-info text-white my-2 d-block"
+            >
+              Add Product
+            </button>
+            <button
+              id="updateButton"
+              onclick="updateProducts()"
+              type="button"
+              class="btn btn-danger text-light my-2 d-none"
+            >
+              Update Product
+            </button>
+            <input
+              id="searchProductsInput"
+              type="search"
+              class="form-control my-4"
+              placeholder="Search By Product Name"
+              oninput="searchProducts()"
+            />
+          </form>
+        </div>
+      </section>
+      <section class="my-3">
+        <div class="container">
+          <div class="row g-3" id="productContainer"></div>
+        </div>
+      </section>
+    </main>
+    <!-- ^ fontawsome js file -->
+    <script src="./js/all.min.js"></script>
+    <!-- ^ bootstrap js file -->
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <!-- ^ my js file -->
+    <script src="./js/index.js"></script>
+  </body>
+</html>
