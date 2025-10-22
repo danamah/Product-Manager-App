@@ -103,6 +103,10 @@ function resetInput() {
   productPriceInput.value = null;
   productDescriptionInput.value = null;
   productImageInput.value = null;
+  productNameInput.classList.remove("is-valid", "is-invalid");
+  productPriceInput.classList.remove("is-valid", "is-invalid");
+  productCategoryInput.classList.remove("is-valid", "is-invalid");
+  productDescriptionInput.classList.remove("is-valid", "is-invalid");
 }
 
 // ~ display all product function
